@@ -16,7 +16,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    NSURL *myURL = [NSURL URLWithString:@"http://ja.wikipedia.org/wiki/%E5%85%B5%E5%BA%AB%E7%9C%8C"];
+    
+    NSURLRequest *myURLReq = [NSURLRequest requestWithURL:myURL];
+    
+    [self.myWebView loadRequest:myURLReq];
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pasteboardChanged:)
+                                                 name:UIPasteboardChangedNotification
+                                               object:nil];
+
+}
+
+-(BOOL)pasteboardChanged:(id)sender{
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+
+    
+    // 文字列を取り出す。(消去と書き込みで2回呼ばれる)
+    NSString *string = [pasteboard valueForPasteboardType:@"public.text"];
+    NSLog(@"クリップボード:%@",string);
+
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

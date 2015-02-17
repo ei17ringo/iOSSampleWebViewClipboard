@@ -412,6 +412,7 @@
 				1B8BFE021A91C94100293B95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B8BFE031A91C94100293B95 /* Build configuration list for PBXNativeTarget "SampleWebViewJSTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				1B8BFE051A91C94100293B95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
